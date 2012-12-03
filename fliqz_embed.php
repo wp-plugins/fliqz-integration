@@ -1,20 +1,20 @@
 <?php
 /**
  * @package Fliqz
- * @version 0.1
+ * @version 0.2
  */
 /*
 Plugin Name: Fliqz Embed
 Description: Provides Fliqz asset embedding in the WYSIWYG editor
 Author: Media Devils Inc.
-Version: 0.1
+Version: 0.2
 Author URI: http://mediadevils.com
 */
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 register_activation_hook(__FILE__, array('FliqzEmbed', 'dependencies'));
 
-if(FliqzEmbed::dependencies() && is_plugin_active("fliqz/fliqz_embed.php"))
+if(FliqzEmbed::dependencies() && is_plugin_active(basename(dirname(__FILE__))."/fliqz_embed.php"))
 	add_action('init', array('FliqzEmbed', 'init'));
 
 class FliqzEmbed {
@@ -47,7 +47,7 @@ class FliqzEmbed {
 	);
 	
 	public static function dependencies() {
-		if(!is_plugin_active("fliqz/fliqz.php")) {
+		if(!is_plugin_active(basename(dirname(__FILE__))."/fliqz.php")) {
 			deactivate_plugins(__FILE__);
 			return false;
 		}

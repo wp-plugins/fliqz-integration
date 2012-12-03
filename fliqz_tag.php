@@ -23,6 +23,6 @@ class FliqzTag {
 	}
 	
 	public static function enqueue_frontend() {
-		wp_register_script("fliqz-smarttag", plugins_url('fliqz/javascript/smarttag-init.js', dirname(__FILE__)), array('jquery'));
+		wp_register_script("fliqz-smarttag", plugins_url(basename(dirname(__FILE__)).'/javascript/smarttag-init.js', dirname(__FILE__)), array('jquery'));
 	}
 }

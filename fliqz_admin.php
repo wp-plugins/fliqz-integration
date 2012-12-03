@@ -25,6 +25,7 @@ class FliqzAdmin {
 		if(!current_user_can('manage_options'))
 			wp_die(__('You do not have sufficient permissions to access this page.'));
 		
+		$settingsUpdated = false;
 		if(array_key_exists("fliqz_options_submit_hidden", $_POST) && $_POST["fliqz_options_submit_hidden"] == "Y") {
 			foreach(self::$plugin_options as $option_name => $friendly_name)
 				if(array_key_exists("option_{$option_name}", $_POST))
@@ -33,6 +34,8 @@ class FliqzAdmin {
 			foreach(self::$plugin_options_select as $option_name => $details)
 				if(array_key_exists("option_{$option_name}", $_POST) && in_array($_POST["option_{$option_name}"], $details["values"]))
 					update_option($option_name, $_POST["option_{$option_name}"]);
+			
+			$settingsUpdated = true;
 		}
 		
 		include(FLIQZ_PLUGIN_PATH.'templates/plugin_options.tpl');

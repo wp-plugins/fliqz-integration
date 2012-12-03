@@ -4,7 +4,7 @@ Donate link: http://mediadevils.com
 Tags: fliqz, vbrick, video
 Requires at least: 3.0.1
 Tested up to: 3.4
-Stable tag: 0.1
+Stable tag: 0.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,11 @@ Fliqz API.
 * `[keywords]` - Keywords`
 
 == Changelog ==
+
+= 0.2 =
+
+Made plugin's function independent of its directory.
+Added confirmation message that plugin settings were saved.
 
 = 0.1 =
 

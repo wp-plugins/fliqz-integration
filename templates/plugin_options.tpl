@@ -1,5 +1,12 @@
 <div id="wrap">
 	<h2>Fliqz Options</h2>
+<?php
+if($settingsUpdated) {
+?>
+	<p>Settings have been updated.</p>
+<?php
+}
+?>
 	<form name="fliqz_plugin_options" method="POST">
 		<input type="hidden" name="fliqz_options_submit_hidden" value="Y" />
 <?php
