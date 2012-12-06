@@ -19,6 +19,8 @@ results and videos into your WordPress pages.
 This plugin will require that your Fliqz service account be of the Silver package or higher, in order to access the
 Fliqz API.
 
+This plugin is provided by [Media Devils](http://mediadevils.com).
+
 == Installation ==
 
 1. Upload the fliqz plugin directory to your `/wp-content/plugins/` directory.
